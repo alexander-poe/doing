@@ -13,10 +13,15 @@ class App extends Component {
   }
 
   render() {
+    const location = this.props.location;
+
     return (
       <div className="App">
         <Header />
-        <Location />
+        {
+          !Object.keys(location).length &&
+          <Location />
+        }
         {/*<Buttons />
         <Suggestion />*/}
         <Footer />
@@ -25,7 +30,9 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {};
+const mapStateToProps = state => ({
+  location: state.handleLocation,
+});
 
 const mapDispatchToProps = {};
 
