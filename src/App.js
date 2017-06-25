@@ -32,7 +32,7 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  location: state.handleLocation,
+  location: state.location,
 });
 
 const mapDispatchToProps = { setLocation };

@@ -6,8 +6,8 @@ import handleLocation from './handleLocation';
 
 
 export default combineReducers({
-  handleParks,
-  handleSuggestion,
-  handleBars,
-  handleLocation,
+  parks: handleParks,
+  suggestion: handleSuggestion,
+  bars: handleBars,
+  location: handleLocation,
 });
