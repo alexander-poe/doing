@@ -1,25 +1,24 @@
 import axios from 'axios';
 
 export const fetchParkSuccess = parks => ({
-    type: 'fetchParkSuccess',
-    parks: parks
-})
+  type: 'fetchParkSuccess',
+  parks,
+});
 
 const fetchPark = (lat, long) => (dispatch) => {
-	const location = `location=${lat},${long}&`;
-	const radius = `radius=1500&`;
-	const type = 'keyword=park&'
-	const key = 'key=AIzaSyCrHLg2fo1NEGcMYI_wt7fugERIk9TrmUQ&'
-	const url ='https://crossorigin.me/https://maps.googleapis.com/maps/api/place/nearbysearch/json?'
-	axios.get('https://crossorigin.me/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=45.523062,-122.676482&radius=500&keyword=park&key=AIzaSyCrHLg2fo1NEGcMYI_wt7fugERIk9TrmUQ')
-		.then((response) => {
-			dispatch(fetchParkSuccess(response.data.results))
-		}).catch((error) => {
-
-		});
-}
-
-
+  const key = `&key=${process.env.REACT_APP_GOOGLE_KEY}`;
+  const location = `location=${lat},${long}`;
+  const radius = '&radius=1500';
+  const type = '&type=park';
+  const CORS = 'https://crossorigin.me/';
+  const baseUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
+  axios.get(`${CORS}${baseUrl}${location}${key}${radius}${type}`)
+    .then((response) => {
+      dispatch(fetchParkSuccess(response.data.results));
+    }).catch((error) => {
+      console.error('Request unsuccessful', error);
+    });
+};
 
 
 export default fetchPark;
