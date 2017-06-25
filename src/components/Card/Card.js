@@ -24,7 +24,9 @@ class Card extends Component {
 Card.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  cardText: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  reviews: PropTypes.string.isRequired,
   link: PropTypes.string,
 };
 
@@ -33,3 +35,4 @@ Card.defaultProps = {
 };
 
 export default Card;
+
