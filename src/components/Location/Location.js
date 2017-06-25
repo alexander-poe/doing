@@ -4,7 +4,10 @@ import { geolocated } from 'react-geolocated';
 
 class Location extends Component {
   componentWillReceiveProps(nextProps) {
-    this.props.setLocation(nextProps);
+    setTimeout(500);
+    if (nextProps.isGeolocationAvailable && nextProps.isGeolocationEnabled) {
+      this.props.setLocation(nextProps);
+    }
   }
 
   render() {
