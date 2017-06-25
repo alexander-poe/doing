@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Card from './components/Card/Card';
 import Location from './components/Location/Location';
 import Buttons from './containers/ButtonsContainer';
 
@@ -12,7 +13,7 @@ import setLocation from './redux/actions/setLocation';
 
 class App extends Component {
   render() {
-    const location = this.props.location;
+  const { location, suggestion, card } = this.props;
 
     return (
       <div className="App">
@@ -33,7 +34,9 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   location: state.location,
-});
+  suggestion: state.suggestion,
+  card: state.card,
+});;
 
 const mapDispatchToProps = { setLocation };
 
