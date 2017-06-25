@@ -28,7 +28,7 @@
     "babel-loader": "^7.0.0"
   },
   "scripts": {
-    "start": "sh -ac '. .env.local; react-scripts start'",
+    "start": "sh -ac '. .env; react-scripts start'",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
