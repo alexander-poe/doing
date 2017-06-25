@@ -6,7 +6,7 @@ export const fetchBarSuccess = bars => ({
 });
 
 export const getBar = (lat, long) => (dispatch) => {
-  const key = '&key=AIzaSyCrHLg2fo1NEGcMYI_wt7fugERIk9TrmUQ';
+  const key = '&key=' + process.env.REACT_APP_GOOGLE_KEY;
   const location = `location=${lat},${long}`;
   const radius = '&radius=1500';
   const type = '&type=night_club';
