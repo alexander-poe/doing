@@ -9,11 +9,12 @@ import Buttons from './containers/ButtonsContainer';
 import Suggestion from './components/Suggestion/Suggestion';
 
 import setLocation from './redux/actions/setLocation';
+import clearSuggestion from './redux/actions/fetchSuggestion';
 
 
 class App extends Component {
   render() {
-    const { location, suggestion } = this.props;
+    const { location, suggestion, clearSuggestion } = this.props;
 
     return (
       <div className="App">
@@ -32,6 +33,7 @@ class App extends Component {
           !!Object.keys(suggestion).length &&
           <Suggestion
             suggestion={suggestion}
+            clearSuggestion={clearSuggestion}
           />
         }
         <Footer />
@@ -45,6 +47,6 @@ const mapStateToProps = state => ({
   suggestion: state.suggestion,
 });
 
-const mapDispatchToProps = { setLocation };
+const mapDispatchToProps = { setLocation, clearSuggestion };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
