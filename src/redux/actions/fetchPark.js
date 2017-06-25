@@ -1,5 +1,6 @@
 import axios from 'axios';
 import fetchSuggestion from './fetchSuggestion';
+import formatData from './formatData';
 
 export const fetchParkSuccess = parks => ({
   type: 'fetchParkSuccess',
@@ -14,9 +15,10 @@ export default (lat, long) => (dispatch) => {
   const CORS = 'https://crossorigin.me/';
   const baseUrl = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?';
   axios.get(`${CORS}${baseUrl}${location}${key}${radius}${type}`)
-    .then((response) => {
-      dispatch(fetchParkSuccess(response.data.results));
-      return response.data.results;
+    .then(res => formatData(res.data.results))
+    .then((formattedData) => {
+      dispatch(fetchParkSuccess(formattedData));
+      return formattedData;
     })
     .then(suggestions => dispatch(fetchSuggestion(suggestions)))
     .catch((error) => {
