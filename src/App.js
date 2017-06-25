@@ -1,14 +1,14 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import './App.css';
-
+import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Location from './components/Location/Location';
 import Buttons from './containers/ButtonsContainer';
 import Suggestion from './components/Suggestion/Suggestion';
-
 import setLocation from './redux/actions/setLocation';
+import './App.css';
 
 
 class App extends Component {
@@ -44,6 +44,11 @@ const mapStateToProps = state => ({
   location: state.location,
   suggestion: state.suggestion,
 });
+
+App.propTypes = {
+  location: PropTypes.object,
+  suggestion: PropTypes.object,
+};
 
 const mapDispatchToProps = { setLocation };
 
