@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fetchSuggestion from './fetchSuggestion';
 
 export const fetchBarSuccess = bars => ({
   type: 'SET_BARS',
@@ -21,7 +22,9 @@ export default (lat, long) => (dispatch) => {
   axios(req)
     .then((res) => {
       dispatch(fetchBarSuccess(res.data.results));
+      return res.data.results;
     })
+    .then(suggestions => dispatch(fetchSuggestion(suggestions)))
     .catch((err) => {
       console.error('Request unsuccessful', err);
     });
