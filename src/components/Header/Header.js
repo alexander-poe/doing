@@ -5,7 +5,7 @@ export default () => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <a href="#">Test</a>
+        <a href="/">Test</a>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
