@@ -9,7 +9,7 @@ import Buttons from './containers/ButtonsContainer';
 import Suggestion from './components/Suggestion/Suggestion';
 
 import setLocation from './redux/actions/setLocation';
-import clearSuggestion from './redux/actions/fetchSuggestion';
+import { clearSuggestion } from './redux/actions/fetchSuggestion';
 
 
 class App extends Component {

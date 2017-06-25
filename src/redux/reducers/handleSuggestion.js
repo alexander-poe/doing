@@ -1,6 +1,6 @@
 export default (state = {}, action) => {
   switch (action.type) {
-    case 'fetchSuggestionSucces':
+    case 'fetchSuggestionSuccess':
       return action.suggestion;
     case 'clearSuggestion':
       return {};
