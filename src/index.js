@@ -6,20 +6,16 @@ import App from './App';
 import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers';
 import { createStore, applyMiddleware } from 'redux';
+import store from './redux/store';
 
 import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 dotenv.config()
 
-const store = createStore(
-	rootReducer,
-	applyMiddleware(thunk),
-)
-
 ReactDOM.render(
 	<Provider store={store}>
 		<App />
 	</Provider>, document.getElementById('root'));
-	
+
 registerServiceWorker();

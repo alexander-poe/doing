@@ -30,7 +30,7 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <div>
-          <input type="text" onClick={this.getSuggestion(this.props.parks)} />
+          <input type="text" onClick={() => this.getSuggestion(this.props.parks)} />
         </div>
       </div>
     );
