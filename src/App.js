@@ -4,6 +4,7 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Location from './components/Location/Location';
 
 
 class App extends Component {
@@ -15,8 +16,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        {/*<Location />
-        <Buttons />
+        <Location />
+        {/*<Buttons />
         <Suggestion />*/}
         <Footer />
       </div>
