@@ -24,7 +24,10 @@ class App extends Component {
             setLocation={this.props.setLocation}
           />
         }
-        <Buttons />
+        {
+          (!!Object.keys(location).length && !Object.keys(suggestion).length)
+          && <Buttons />
+        }
         {
           !!Object.keys(suggestion).length &&
           <Suggestion
