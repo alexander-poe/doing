@@ -4,19 +4,25 @@ import './App.css';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Location from './components/Location/Location';
+
+import setLocation from './redux/actions/setLocation';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props)
-  }
-
   render() {
+    const location = this.props.location;
+
     return (
       <div className="App">
         <Header />
-        {/*<Location />
-        <Buttons />
+        {
+          !Object.keys(location).length &&
+          <Location
+            setLocation={this.props.setLocation}
+          />
+        }
+        {/*<Buttons />
         <Suggestion />*/}
         <Footer />
       </div>
@@ -24,8 +30,10 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {};
+const mapStateToProps = state => ({
+  location: state.handleLocation,
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = { setLocation };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
