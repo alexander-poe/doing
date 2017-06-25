@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import fetchPark from './redux/actions/fetchPark';
 import fetchSuggestion from './redux/actions/fetchSuggestion';
+import { getBar } from './redux/actions/fetchBar';
 import logo from './logo.svg';
 import './App.css';
 
@@ -13,11 +14,11 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.props.dispatch(fetchPark(12132, 231313))
+    this.props.fetchPark(12132, 231313)
   }
 
   getSuggestion(collection) {
-    this.props.dispatch(fetchSuggestion(collection))
+    this.props.fetchSuggestion(collection)
   }
 
   render() {
@@ -31,6 +32,7 @@ class App extends Component {
         </p>
         <div>
           <input type="text" onClick={() => this.getSuggestion(this.props.parks)} />
+          <button onClick={() => this.props.getBar(45.507704, -122.623172)} />
         </div>
       </div>
     );
@@ -54,4 +56,6 @@ const mapStateToProps = state => {
 
 };
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = { getBar, fetchPark, fetchSuggestion };
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
