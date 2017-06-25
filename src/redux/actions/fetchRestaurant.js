@@ -1,5 +1,6 @@
 import axios from 'axios';
 import fetchSuggestion from './fetchSuggestion';
+import formatData from './formatData';
 
 export const fetchRestaurantSuccess = restaurants => ({
   type: 'SET_RESTAURANTS',
@@ -20,9 +21,10 @@ export default (lat, long) => (dispatch) => {
   };
 
   axios(req)
-    .then((res) => {
-      dispatch(fetchRestaurantSuccess(res.data.results));
-      return res.data.results;
+    .then(res => formatData(res.data.results))
+    .then((formattedData) => {
+      dispatch(fetchRestaurantSuccess(formattedData));
+      return formattedData;
     })
     .then(suggestions => dispatch(fetchSuggestion(suggestions)))
     .catch((err) => {
