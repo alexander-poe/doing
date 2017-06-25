@@ -6,6 +6,8 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Location from './components/Location/Location';
 
+import setLocation from './redux/actions/setLocation';
+
 
 class App extends Component {
   constructor(props) {
@@ -20,7 +22,9 @@ class App extends Component {
         <Header />
         {
           !Object.keys(location).length &&
-          <Location />
+          <Location
+            setLocation={this.props.setLocation}
+          />
         }
         {/*<Buttons />
         <Suggestion />*/}
@@ -34,6 +38,6 @@ const mapStateToProps = state => ({
   location: state.handleLocation,
 });
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = { setLocation };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

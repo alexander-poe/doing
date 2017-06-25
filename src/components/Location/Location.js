@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import { geolocated } from 'react-geolocated';
 
+
 class Location extends Component {
   constructor(props) {
     super(props);
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log(nextProps);
+    this.props.setLocation(nextProps);
   }
 
   render() {

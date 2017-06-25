@@ -3,7 +3,11 @@ const formatLocation = locationData => ({
   longitude: locationData.coords.longitude,
 });
 
-export default location => ({
+export const setLocation = location => ({
   type: 'SET_LOCATION',
-  location: formatLocation(location),
+  location,
 });
+
+export default location => (dispatch) => {
+  dispatch(setLocation(formatLocation(location)));
+};
