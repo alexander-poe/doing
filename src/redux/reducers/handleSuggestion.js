@@ -1,6 +1,11 @@
 export default (state = {}, action) => {
-  if (action.type === 'fetchSuggestionSuccess') {
-    return action.suggestion;
+  switch (action.type) {
+    case 'fetchSuggestionSuccess':
+      return action.suggestion;
+    case 'clearSuggestion':
+      return {};
+    default:
+      return state;
   }
 
   return state;

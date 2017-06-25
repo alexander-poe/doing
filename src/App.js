@@ -1,6 +1,7 @@
 /* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { clearSuggestion } from './redux/actions/fetchSuggestion';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -13,7 +14,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const { location, suggestion } = this.props;
+    const { location, suggestion, clearSuggestion } = this.props;
 
     return (
       <div className="App">
@@ -32,6 +33,7 @@ class App extends Component {
           !!Object.keys(suggestion).length &&
           <Suggestion
             suggestion={suggestion}
+            clearSuggestion={clearSuggestion}
           />
         }
         <Footer />
@@ -50,6 +52,6 @@ App.propTypes = {
   suggestion: PropTypes.object,
 };
 
-const mapDispatchToProps = { setLocation };
+const mapDispatchToProps = { setLocation, clearSuggestion };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
