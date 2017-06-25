@@ -2,11 +2,11 @@ import axios from 'axios';
 
 export const fetchBarSuccess = bars => ({
   type: 'SET_BARS',
-  bars
+  bars,
 });
 
-export const getBar = (lat, long) => (dispatch) => {
-  const key = '&key=' + process.env.REACT_APP_GOOGLE_KEY;
+export default (lat, long) => (dispatch) => {
+  const key = `&key=${process.env.REACT_APP_GOOGLE_KEY}`;
   const location = `location=${lat},${long}`;
   const radius = '&radius=1500';
   const type = '&type=night_club';
