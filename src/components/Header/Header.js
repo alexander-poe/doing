@@ -1,23 +1,19 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
+import styles from './header.css';
 
 export default () => (
-  <Navbar>
-    <Navbar.Header>
-      <Navbar.Brand>
-        <a href="/">Test</a>
-      </Navbar.Brand>
-    </Navbar.Header>
-    <Nav>
-      <NavItem eventKey={1} href="#">Link</NavItem>
-      <NavItem eventKey={2} href="#">Link</NavItem>
-      <NavDropdown eventKey={3} title="Dropdown" id="basic-nav-dropdown">
-        <MenuItem eventKey={3.1}>Action</MenuItem>
-        <MenuItem eventKey={3.2}>Another action</MenuItem>
-        <MenuItem eventKey={3.3}>Something else here</MenuItem>
-        <MenuItem divider />
-        <MenuItem eventKey={3.4}>Separated link</MenuItem>
-      </NavDropdown>
-    </Nav>
-  </Navbar>
+  <div className={styles.navBar}>
+    <div className={styles.navBrand}>
+      <p>Are you silly?</p>
+      <a href="/">
+        <img
+          alt="Logo"
+          src={`${process.env.PUBLIC_URL}/sendit_logo.png`}
+          width="200px"
+          className={styles.logo}
+        />
+      </a>
+      <p>Im still gonna send it...</p>
+    </div>
+  </div>
 );
