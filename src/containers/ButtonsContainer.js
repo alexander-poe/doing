@@ -5,7 +5,7 @@ import getBar from '../redux/actions/fetchBar';
 import fetchPark from '../redux/actions/fetchPark';
 
 const mapStateToProps = state => ({
-  location: state.location,
+  location: state.handleLocation,
 });
 
 
