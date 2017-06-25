@@ -5,11 +5,11 @@ export default (props) => (
   <div>
     <Button
       bsStyle="primary"
-      onClick={() => props.getBar()}
+      onClick={() => props.getBar(props.location.latitude, props.location.longitude)}
     >Primary</Button>
     <Button
       bsStyle="primary"
-      onClick={() => props.fetchPark()}
+      onClick={() => props.fetchPark(props.location.latitude, props.location.longitude)}
     >Primary</Button>
 
   </div>
