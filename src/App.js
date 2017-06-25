@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import fetchPark from './redux/actions/fetchPark';
 import fetchSuggestion from './redux/actions/fetchSuggestion';
 import logo from './logo.svg';
-import Parks from './components/parks'
 import './App.css';
 
 
