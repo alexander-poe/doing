@@ -2,23 +2,8 @@ import { connect } from 'react-redux';
 import Buttons from '../components/Buttons/Buttons';
 
 import getBar from '../redux/actions/fetchBar';
+import fetchPark from '../redux/actions/fetchPark';
 
+const mapDispatchToProps = { getBar, fetchPark };
 
-
-const mapStateToProps = (state, ownProps) => {
-
-  return {
-
-  };
-};
-
-const mapDispatchToProps = (dispatch) => ({
-    toggleOne (song, list) {
-      dispatch(toggleSong(song, list));
-    }
-  });
-
-export default (connect)(
-  mapStateToProps,
-  mapDispatchToProps,
-)(Buttons);
+export default (connect)(null, mapDispatchToProps)(Buttons);

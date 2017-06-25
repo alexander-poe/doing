@@ -5,7 +5,7 @@ export const fetchParkSuccess = parks => ({
   parks,
 });
 
-const fetchPark = (lat, long) => (dispatch) => {
+export default (lat, long) => (dispatch) => {
   const key = `&key=${process.env.REACT_APP_GOOGLE_KEY}`;
   const location = `location=${lat},${long}`;
   const radius = '&radius=1500';
@@ -19,7 +19,3 @@ const fetchPark = (lat, long) => (dispatch) => {
       console.error('Request unsuccessful', error);
     });
 };
-
-
-export default fetchPark;
-

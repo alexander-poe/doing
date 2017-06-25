@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Location from './components/Location/Location';
+import Buttons from './containers/ButtonsContainer';
 
 import setLocation from './redux/actions/setLocation';
 
@@ -22,8 +23,8 @@ class App extends Component {
             setLocation={this.props.setLocation}
           />
         }
-        {/*<Buttons />
-        <Suggestion />*/}
+        <Buttons />
+        {/*<Suggestion />*/}
         <Footer />
       </div>
     );
