@@ -26,7 +26,15 @@ class App extends Component {
         }
         <Buttons />
         {/*<Suggestion />*/}
+        {/* EXAMPLE CARD USAGE - REMOVE BEFORE PR/MERGE */}
+        <Card 
+          image="http://www.newschoolbeer.com/wp-content/uploads/2015/03/yardhouse_logo_lr.jpg"
+          title="Yard House"
+          cardText="Address, Reviews, Blah, Blah"
+          link="https://yardhouse.com/home"
+        />
         <Footer />
+
       </div>
     );
   }

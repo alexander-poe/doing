@@ -1,32 +1,32 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import styles from './card.css';
 
-class ResultCard extends Component {
+class Card extends Component {
   render() {
     return (
-    <div className={styles.Res} >
-      <img className={styles.image} src={this.props.image} alt={this.props.title} />
-        <div className={styles.cardContainer}>
+      <div className={styles.cardContainer}>
+        <img className={styles.image} src={this.props.image} alt={this.props.title} />
           <div className={styles.cardText}>
-            <h2>{this.props.title}</h2>
+            <h4>{this.props.title}</h4>
             <p>{this.props.cardText}</p>
-            {this.props.link && <LinkButton text={this.props.buttonText} link={this.props.link} />}
+            <br />
+            <a href={this.props.link}>Visit Website</a>
           </div>
       </div>
-    </div>
     );
   }
 }
 
-ResultCard.propTypes = {
+Card.propTypes = {
   image: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   cardText: PropTypes.string.isRequired,
-  buttonText: PropTypes.string,
-  link: PropTypes.string
+  link: PropTypes.string,
 };
 
-ResultCard.defaultProps = {
+Card.defaultProps = {
   link: null,
-  buttonText: null
 };
+
+export default Card;
