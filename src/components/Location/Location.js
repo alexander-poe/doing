@@ -3,10 +3,6 @@ import { geolocated } from 'react-geolocated';
 
 
 class Location extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   componentWillReceiveProps(nextProps) {
     this.props.setLocation(nextProps);
   }

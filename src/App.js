@@ -10,18 +10,19 @@ import setLocation from './redux/actions/setLocation';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
+    const location = this.props.location;
+
     return (
       <div className="App">
         <Header />
-        <Location
-          setLocation={this.props.setLocation}
-        />
-        {/* <Buttons />
+        {
+          !Object.keys(location).length &&
+          <Location
+            setLocation={this.props.setLocation}
+          />
+        }
+        {/*<Buttons />
         <Suggestion />*/}
         <Footer />
       </div>
