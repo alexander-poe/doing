@@ -6,7 +6,11 @@ import './App.css';
 
 
 class App extends Component {
+  constructor(props) {
+    super(props)
+  }
   doAction() {
+    console.log(this.props.parks, ' click')
     this.props.dispatch(fetchPark(12313, 123123))
   }  
 
@@ -25,4 +29,18 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const mapStateToProps = state => {
+      if (state.handleParks.parks.length) {
+        return {
+          parks: state.handleParks.parks
+        }
+      } else {
+        return {
+          parks: []
+        }
+      }
+
+
+};
+
+export default connect(mapStateToProps)(App);
