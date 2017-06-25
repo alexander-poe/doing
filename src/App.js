@@ -10,12 +10,12 @@ import Buttons from './containers/ButtonsContainer';
 import Suggestion from './components/Suggestion/Suggestion';
 
 import setLocation from './redux/actions/setLocation';
+import { clearSuggestion } from './redux/actions/fetchSuggestion';
 
 
 class App extends Component {
   render() {
-  const { location, suggestion, card } = this.props;
-
+  const { location, suggestion, card, clearSuggestion } = this.props;
 
     return (
       <div className="App">
@@ -31,6 +31,7 @@ class App extends Component {
           !!Object.keys(suggestion).length &&
           <Suggestion
             suggestion={suggestion}
+            clearSuggestion={clearSuggestion}
           />
         }
         <Card
@@ -52,6 +53,6 @@ const mapStateToProps = state => ({
   card: state.card,
 });;
 
-const mapDispatchToProps = { setLocation };
+const mapDispatchToProps = { setLocation, clearSuggestion };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
