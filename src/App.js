@@ -37,7 +37,9 @@ class App extends Component {
         <Card
           image="http://www.newschoolbeer.com/wp-content/uploads/2015/03/yardhouse_logo_lr.jpg"
           title="Yard House"
-          cardText="Address, Reviews, Blah, Blah"
+          address="Address"
+          reviews="Reviews"
+          number="888-888-888"
           link="https://yardhouse.com/home"
         />
         <Footer />
@@ -56,3 +58,4 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = { setLocation, clearSuggestion };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

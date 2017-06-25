@@ -5,13 +5,16 @@ import styles from './card.css';
 class Card extends Component {
   render() {
     return (
-      <div className={styles.cardContainer}>
+      <div idName={styles.image}>
         <img className={styles.image} src={this.props.image} alt={this.props.title} />
           <div className={styles.cardText}>
             <h4>{this.props.title}</h4>
-            <p>{this.props.cardText}</p>
+            <p>{this.props.reviews}</p>
             <br />
-            <a href={this.props.link}>Visit Website</a>
+            <a href={this.props.link}>yardhouse.com</a>
+            <p>{this.props.address}</p>
+            <p>{this.props.number}</p>
+            <br />
           </div>
       </div>
     );
