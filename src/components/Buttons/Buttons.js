@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-export default ({ location, getBar, fetchPark}) => (
+export default ({ location, getBar, getRestaurant, fetchPark }) => (
   <div>
     <Button
       bsStyle="primary"
@@ -10,6 +10,10 @@ export default ({ location, getBar, fetchPark}) => (
     <Button
       bsStyle="primary"
       onClick={() => fetchPark(location.latitude, location.longitude)}
+    >Primary</Button>
+    <Button
+      bsStyle="primary"
+      onClick={() => getRestaurant(location.latitude, location.longitude)}
     >Primary</Button>
 
   </div>

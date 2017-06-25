@@ -1,13 +1,15 @@
 import { combineReducers } from 'redux';
-import handleParks from './handleParks';
-import handleSuggestion from './handleSuggestion';
-import handleBars from './handleBars';
-import handleLocation from './handleLocation';
+import parks from './handleParks';
+import suggestion from './handleSuggestion';
+import bars from './handleBars';
+import location from './handleLocation';
+import restaurants from './handleRestaurants';
 
 
 export default combineReducers({
-  parks: handleParks,
-  suggestion: handleSuggestion,
-  bars: handleBars,
-  location: handleLocation,
+  parks,
+  suggestion,
+  bars,
+  location,
+  restaurants,
 });
