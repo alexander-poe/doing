@@ -6,13 +6,14 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Location from './components/Location/Location';
 import Buttons from './containers/ButtonsContainer';
+import Suggestion from './components/Suggestion/Suggestion';
 
 import setLocation from './redux/actions/setLocation';
 
 
 class App extends Component {
   render() {
-    const location = this.props.location;
+    const { location, suggestion } = this.props;
 
     return (
       <div className="App">
@@ -24,7 +25,12 @@ class App extends Component {
           />
         }
         <Buttons />
-        {/*<Suggestion />*/}
+        {
+          !!Object.keys(suggestion).length &&
+          <Suggestion
+            suggestion={suggestion}
+          />
+        }
         <Footer />
       </div>
     );
@@ -33,6 +39,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   location: state.location,
+  suggestion: state.suggestion,
 });
 
 const mapDispatchToProps = { setLocation };
