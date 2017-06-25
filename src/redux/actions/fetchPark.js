@@ -1,4 +1,5 @@
 import axios from 'axios';
+import fetchSuggestion from './fetchSuggestion';
 
 export const fetchParkSuccess = parks => ({
   type: 'fetchParkSuccess',
@@ -15,7 +16,10 @@ export default (lat, long) => (dispatch) => {
   axios.get(`${CORS}${baseUrl}${location}${key}${radius}${type}`)
     .then((response) => {
       dispatch(fetchParkSuccess(response.data.results));
-    }).catch((error) => {
+      return response.data.results;
+    })
+    .then(suggestions => dispatch(fetchSuggestion(suggestions)))
+    .catch((error) => {
       console.error('Request unsuccessful', error);
     });
 };
