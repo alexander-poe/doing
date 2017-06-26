@@ -1,0 +1,45 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  display: block;
+  background-color: #291929;
+  font-size: 1.7rem;
+
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
+
+.leftFooter {
+  padding-left: 2.5vw;
+  width: 47.5vw;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rightFooter {
+  padding-right: 2.5vw;
+  width: 47.5vw;
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 450px) and (max-width: 600px) {
+  .leftFooter > a,
+  .rightFooter > a {
+    font-size: 1.4rem;
+  }
+}
+
+@media only screen and (max-width: 449px) {
+  .leftFooter > a,
+  .rightFooter > a {
+    font-size: 1.2rem;
+  }
+}

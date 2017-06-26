@@ -6,16 +6,41 @@
 }
 
 .navBrand {
+  padding: 0 25px 0 25px;
   display: flex;
+  flex-flow: row;
   align-content: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
-.navBrand > p {
-  padding-top: 50px;
+.navBrand > h2 {
+  padding-top: 15px;
   color: #FFF;
+  font-size: 3rem;
 }
 
 .logo {
-  
+  width: 300px;
+}
+
+.logoBG {
+  background: url('http://www.onlygfx.com/wp-content/uploads/2017/01/comic-explosion-bubble-1.png');
+}
+
+@media only screen and (min-width: 530px) and (max-width: 787px) {
+  .navBrand > h2 {
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (min-width: 451px) and (max-width: 529px) {
+  .navBrand > h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .navBrand > h2 {
+    display: none;
+  }
 }

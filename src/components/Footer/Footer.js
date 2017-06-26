@@ -1,23 +1,17 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
-
-const styles = {
-  footer: {
-    bottom: 0,
-    width: '100%',
-    position: 'absolute',
-    height: 60,
-    backgroundColor: 'lightgrey',
-  },
-  footerBlock: {
-    margin: 20,
-  },
-};
+import styles from './footer.css';
 
 export default () => (
-  <div id="footer" style={styles.footer}>
-    <div className="container">
-      <p className="footer-block" style={styles.footerBlock}>Footer</p>
+  <div id="footer" className={styles.footer}>
+    <div className={styles.leftFooter}>
+      <a href="http://www.larryenticer69.com/">God Bless Larry Enticer</a>
+    </div>
+
+    <div className={styles.rightFooter}>
+      <a href="https://github.com/Hackbit/reactriot2017-pdx/">Source Code</a>
+      <a href="https://reactriot.com/">About</a>
+      <a href="mailto:kylemh.email@gmail.com">Contact</a>
     </div>
   </div>
 );
