@@ -5,6 +5,7 @@ import { clearSuggestion } from './redux/actions/fetchSuggestion';
 import PropTypes from 'prop-types';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Card from './components/Card/Card';
 import Location from './components/Location/Location';
 import Buttons from './containers/ButtonsContainer';
 import Suggestion from './components/Suggestion/Suggestion';
@@ -14,7 +15,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    const { location, suggestion, clearSuggestion } = this.props;
+  const { location, suggestion, card, clearSuggestion } = this.props;
 
     return (
       <div className="App">
@@ -25,10 +26,7 @@ class App extends Component {
             setLocation={this.props.setLocation}
           />
         }
-        {
-          (!!Object.keys(location).length && !Object.keys(suggestion).length)
-          && <Buttons />
-        }
+        <Buttons />
         {
           !!Object.keys(suggestion).length &&
           <Suggestion
@@ -36,7 +34,16 @@ class App extends Component {
             clearSuggestion={clearSuggestion}
           />
         }
+        <Card
+          image="http://www.newschoolbeer.com/wp-content/uploads/2015/03/yardhouse_logo_lr.jpg"
+          title="Yard House"
+          address="Address"
+          reviews="Reviews"
+          number="888-888-888"
+          link="https://yardhouse.com/home"
+        />
         <Footer />
+
       </div>
     );
   }
@@ -45,7 +52,8 @@ class App extends Component {
 const mapStateToProps = state => ({
   location: state.location,
   suggestion: state.suggestion,
-});
+  card: state.card,
+});;
 
 App.propTypes = {
   location: PropTypes.object,
@@ -55,3 +63,4 @@ App.propTypes = {
 const mapDispatchToProps = { setLocation, clearSuggestion };
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
+

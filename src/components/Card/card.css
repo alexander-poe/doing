@@ -1,0 +1,28 @@
+.cardContainer {
+  width: 350px;
+  height: 150px;
+  border-radius: 100%;
+  border: 2px black solid;
+  border-style: solid;
+  margin: 10px;
+  background-color: yellow;
+}
+
+.image {
+  height: 150px;
+  border: 1px black solid;
+  border-radius: 100%;
+  border-style: solid;
+  height: 150px;
+}
+
+.circle {
+  padding: 0;
+  margin: 0;
+  margin-left: 1em;
+  margin-top: 0.5em;
+}
+
+.cardText {
+  color: black;
+}
