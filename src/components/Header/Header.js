@@ -4,16 +4,17 @@ import styles from './header.css';
 export default () => (
   <div className={styles.navBar}>
     <div className={styles.navBrand}>
-      <p>Are you silly?</p>
+      <h2>Are you silly?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
       <a href="/">
-        <img
-          alt="Logo"
-          src={`${process.env.PUBLIC_URL}/sendit_logo.png`}
-          width="200px"
-          className={styles.logo}
-        />
+        <div className="logoBG">
+          <img
+            alt="Logo"
+            src={`${process.env.PUBLIC_URL}/sendit_logo.png`}
+            className={styles.logo}
+          />
+        </div>
       </a>
-      <p>Im still gonna send it...</p>
+      <h2>Im still gonna send it...</h2>
     </div>
   </div>
 );
