@@ -5,7 +5,7 @@ import styles from './card.css';
 class Card extends Component {
   render() {
     return (
-      <div idName={styles.image}>
+      <div className={styles.cardContainer} idName={styles.image}>
         <img className={styles.image} src={this.props.image} alt={this.props.title} />
         <div className={styles.cardText}>
           <h4>{this.props.title}</h4>

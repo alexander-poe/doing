@@ -1,0 +1,11 @@
+.buttons {
+	display: flex;
+	width: 95%;
+	justify-content: space-around;
+	margin-top: 253px;
+}
+
+
+.btn_mod {
+	width: 105px;
+}

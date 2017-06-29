@@ -15,6 +15,7 @@ import './App.css';
 
 class App extends Component {
   render() {
+    console.log(suggestion)
   const { location, suggestion, card, clearSuggestion } = this.props;
 
     return (

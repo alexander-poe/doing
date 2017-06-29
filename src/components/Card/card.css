@@ -1,5 +1,6 @@
 .cardContainer {
-  width: 350px;
+  width: 21%;
+  display: none;
   height: 150px;
   border-radius: 100%;
   border: 2px black solid;
@@ -9,11 +10,12 @@
 }
 
 .image {
-  height: 150px;
   border: 1px black solid;
   border-radius: 100%;
   border-style: solid;
-  height: 150px;
+  height: 123px;
+  display: none;
+  width: auto;
 }
 
 .circle {
