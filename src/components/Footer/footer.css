@@ -3,8 +3,7 @@
   bottom: 0;
   width: 100%;
   height: 100px;
-  display: block;
-  background-color: #291929;
+  display: none;
   font-size: 1.7rem;
 
   display: flex;
@@ -15,7 +14,7 @@
 .leftFooter {
   padding-left: 2.5vw;
   width: 47.5vw;
-  display: flex;
+  display: none;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;
@@ -24,7 +23,7 @@
 .rightFooter {
   padding-right: 2.5vw;
   width: 47.5vw;
-  display: flex;
+  display: none;
   flex-flow: row;
   align-items: center;
   justify-content: space-between;

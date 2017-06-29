@@ -2,10 +2,11 @@
 	display: flex;
 	width: 95%;
 	justify-content: space-around;
-	margin-top: 253px;
+	margin-top: 263px;
 }
 
 
 .btn_mod {
 	width: 105px;
+	background: dodgerblue;
 }
