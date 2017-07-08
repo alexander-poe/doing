@@ -26,7 +26,7 @@ class Location extends Component {
               <tr><td>speed</td><td>{this.props.coords.speed}</td></tr>
             </tbody>
           </table>
-          : <div>Getting the location data&hellip; </div>;
+          : null;
   }
 }
 
