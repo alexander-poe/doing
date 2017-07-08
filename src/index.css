@@ -4,21 +4,9 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Oswald', sans-serif;
-  background-color: yellow;
+  background-color: #FAFAFA;
   background-image: url('http://i.imgur.com/US8HynQ.png');
   background-repeat: repeat;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-body:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    border-top: 80px solid white;
-    border-left: 80px solid dodgerblue;
-    width: 0;
 }
 
 h1,

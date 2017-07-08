@@ -15,8 +15,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-    console.log(suggestion)
-  const { location, suggestion, card, clearSuggestion } = this.props;
+  const { location, suggestion, card, clearSuggestion, settings } = this.props;
 
     return (
       <div className="App">
@@ -27,7 +26,9 @@ class App extends Component {
             setLocation={this.props.setLocation}
           />
         }
-        <Buttons />
+        <Buttons
+          settings={settings}
+        />
         {
           !!Object.keys(suggestion).length &&
           <Suggestion
@@ -44,7 +45,6 @@ class App extends Component {
           link="https://yardhouse.com/home"
         />
         <Footer />
-
       </div>
     );
   }
@@ -54,6 +54,7 @@ const mapStateToProps = state => ({
   location: state.location,
   suggestion: state.suggestion,
   card: state.card,
+  settings: state.settings
 });;
 
 App.propTypes = {

@@ -7,3 +7,55 @@
 	display: inline;
 	margin: 5px;
 }
+
+.imgContainer {
+	width: 100%;
+	overflow: hidden;
+}
+
+.photoFooter {
+	margin: 0 auto;
+	display: flex;
+	width: 90%;
+	color: black;
+	background: #fff;
+}
+
+.thumbnail {
+	background: purple;
+	height: 50px;
+	width: 50px;
+	position: absolute;
+	top: 450px;
+
+}
+
+.imgBox {
+	max-height: 365px;
+	width: 90%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.title {
+	margin-top: 10px;
+	font-size: 21px;
+}
+
+.address {
+	font-size: 11px;
+
+}
+
+.suggestionInfo {
+
+}
+
+.openSection {
+	margin-right: 41px;
+	margin-left: 7px;
+}
+
+.openNow {
+	font-size: 15px; 
+}

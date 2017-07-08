@@ -1,12 +1,22 @@
 .buttons {
 	display: flex;
-	width: 95%;
+	width: 100%;
 	justify-content: space-around;
-	margin-top: 263px;
+	margin-top: -26px;
+	padding: 10px;
+	background: #0F1721;
 }
 
 
 .btn_mod {
-	width: 105px;
-	background: dodgerblue;
+	color: black;
+	height: 32px;
+	margin: 9px;
+	width: 99px;
+	background: #FFF;
+	border: none;
+}
+
+.btn_mod:hover {
+	background: grey;
 }
