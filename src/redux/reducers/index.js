@@ -4,6 +4,7 @@ import suggestion from './handleSuggestion';
 import bars from './handleBars';
 import location from './handleLocation';
 import restaurants from './handleRestaurants';
+import handleConfig from './handleConfig';
 
 
 export default combineReducers({
@@ -12,4 +13,5 @@ export default combineReducers({
   bars,
   location,
   restaurants,
+  handleConfig,
 });

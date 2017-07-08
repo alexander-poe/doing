@@ -1,9 +1,10 @@
 /* eslint react/prop-types: 0 */
 import React from 'react';
 import { Button } from 'react-bootstrap';
+import Settings from './Settings';
 import styles from './Buttons.css';
 
-export default ({ location, getBar, getRestaurant, fetchPark }) => (
+export default ({ location, getBar, getRestaurant, fetchPark, configSettings }) => (
   <div className={styles.buttons}>
     <Button
       bsStyle="primary"
@@ -20,7 +21,9 @@ export default ({ location, getBar, getRestaurant, fetchPark }) => (
       bsStyle="primary"
       onClick={() => getRestaurant(location.latitude, location.longitude)}
     >Food</Button>
-
+    <Settings
+      configSettings={configSettings}
+    />
   </div>
 );
 
