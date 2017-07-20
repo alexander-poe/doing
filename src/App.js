@@ -15,8 +15,7 @@ import './App.css';
 
 class App extends Component {
   render() {
-  const { location, suggestion, card, clearSuggestion, settings } = this.props;
-
+  const { location, suggestion, card, clearSuggestion } = this.props;
     return (
       <div className="App">
         <Header />
@@ -26,9 +25,7 @@ class App extends Component {
             setLocation={this.props.setLocation}
           />
         }
-        <Buttons
-          settings={settings}
-        />
+        <Buttons/>
         {
           !!Object.keys(suggestion).length &&
           <Suggestion
